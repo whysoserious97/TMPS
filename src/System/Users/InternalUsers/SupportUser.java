@@ -19,4 +19,9 @@ public class SupportUser implements User {
     public String login() {
         return "A support user has logged on";
     }
+
+    @Override
+    public User getClone() {
+        return new SupportUser(userType);
+    }
 }

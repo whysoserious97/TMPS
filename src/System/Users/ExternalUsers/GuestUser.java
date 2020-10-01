@@ -19,4 +19,9 @@ public class GuestUser implements User {
     public String login() {
         return "A guest has logged on";
     }
+
+    @Override
+    public User getClone() {
+        return new GuestUser(userType);
+    }
 }

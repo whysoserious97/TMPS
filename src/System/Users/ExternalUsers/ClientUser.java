@@ -20,4 +20,9 @@ public class ClientUser implements User {
 
         return "An Client user has loged on";
     }
+
+    @Override
+    public User getClone() {
+        return new ClientUser(userType);
+    }
 }

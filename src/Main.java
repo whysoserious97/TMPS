@@ -10,6 +10,10 @@ public class Main {
         //Creating 2 users 1 internal, 1 external and 1 non-valid
         User user1=system.getNewUser("internal","Admin");
         User user2=system.getNewUser("external","Client");
+
+        //Checking prototype Patern
+        User user22 = user2.getClone();
+        System.out.println("User cloned has type: "+user22.getUserType());
         User user3=system.getNewUser("internal","Client");
 
         //Trying to loggin for existing ones

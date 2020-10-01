@@ -19,4 +19,9 @@ public class AdminUser implements User {
     public String login(){
         return "An admin user has loged on";
     }
+
+    @Override
+    public User getClone() {
+        return new AdminUser(userType);
+    }
 }
