@@ -1,3 +1,4 @@
+import StructuralDP.SuperDecorator;
 import System.Users.User;
 import System.ITSystem;
 public class Main {
@@ -33,5 +34,16 @@ public class Main {
         // 2nd time we should get the same instance of System.ITSystem
         system= ITSystem.getITSystem();
         System.out.println("Second system:"+system.hashCode());
+
+
+
+        /*
+         Structural paterns
+
+         */
+        // Decorator test - we want to create a super user that will be able to do everything
+        User superUser = new SuperDecorator(user1);
+        System.out.println(superUser.getUserType());
+        System.out.println(superUser.login());
     }
 }

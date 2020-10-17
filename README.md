@@ -116,3 +116,8 @@ For example the client can also clone an instance of himself
 4. We want to be sure that the factory will not be able to create an Object with an invalid combination.
 5. We want to see how "login" method is implemented based on type of users that are accessing this method.
 6. Also we need to get again the system instance, then we want to see if is the same instance as 1st one
+
+##Conclusion
+
+I was able to design a system with the best-practices used for creating objects.
+And now my system will be more easy to be extended in future
