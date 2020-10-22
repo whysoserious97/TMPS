@@ -5,9 +5,12 @@ import System.Users.User;
 public class AdminUser implements User {
 
     String userType;
-
-    public AdminUser(String factoryType){
+    String account;
+    String password;
+    public AdminUser(String factoryType,String account,String password){
         userType=factoryType;
+        this.account=account;
+        this.password=password;
     }
 
     @Override
@@ -16,12 +19,20 @@ public class AdminUser implements User {
     }
 
     @Override
-    public String login(){
-        return "An admin user has loged on";
+    public String login(String account,String password) {
+        if (this.account.equals(account) && this.password.equals(password)){
+            return "An Admin user has loged on";
+        }
+        else{
+            return "Log in failed";
+        }
     }
-
+    public void setLoginAndPassword(String account,String password){
+        this.account=account;
+        this.password=password;
+    }
     @Override
     public User getClone() {
-        return new AdminUser(userType);
+        return new AdminUser(userType,account,password);
     }
 }

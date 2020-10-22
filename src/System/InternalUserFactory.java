@@ -13,9 +13,9 @@ public class InternalUserFactory extends UserFactory {
         String factoryType = "Internal";
 
         if (userType.toLowerCase().equals("admin")) {
-            user = new AdminUser(factoryType);
+            user = new AdminUser(factoryType,"Admin","Admin");
         } else if (userType.toLowerCase().equals("support")) {
-            user = new SupportUser(factoryType);
+            user = new SupportUser(factoryType,"Support","Support");
         }
         return user;
     }

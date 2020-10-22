@@ -9,7 +9,7 @@ public abstract class UserDecorator implements User {
         this.decoratedUser = decoratedUser;
     }
 
-    public String login(){
-        return decoratedUser.login();
+    public String login(String account,String password){
+        return decoratedUser.login(account,password);
     }
 }

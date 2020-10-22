@@ -12,11 +12,11 @@ public class ExternalUserFactory extends UserFactory {
         String factoryType = "External";
 
         if (userType.toLowerCase().equals("client")) {
-            user = new ClientUser(factoryType);
+            user = new ClientUser(factoryType,"Client","Client");
 
         }
         else if (userType.toLowerCase().equals("guest")) {
-            user = new GuestUser(factoryType);
+            user = new GuestUser(factoryType,"Guest","Guest");
         }
         return user;
     }

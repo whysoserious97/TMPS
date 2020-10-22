@@ -5,9 +5,12 @@ import System.Users.User;
 public class SupportUser implements User {
 
     String userType;
-
-    public SupportUser(String factoryType){
+    String account;
+    String password;
+    public SupportUser(String factoryType,String account,String password){
         userType=factoryType;
+        this.account=account;
+        this.password=password;
     }
 
     @Override
@@ -16,12 +19,17 @@ public class SupportUser implements User {
     }
 
     @Override
-    public String login() {
-        return "A support user has logged on";
+    public String login(String account,String password) {
+        if (this.account.equals(account) && this.password.equals(password)){
+            return "A Support user has loged on";
+        }
+        else{
+            return "Log in failed";
+        }
     }
 
     @Override
     public User getClone() {
-        return new SupportUser(userType);
+        return new SupportUser(userType,account,password);
     }
 }
