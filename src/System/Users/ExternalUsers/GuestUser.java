@@ -31,7 +31,7 @@ public class GuestUser implements User {
     }
 
     @Override
-    public User getClone() {
+    public User getClone(String account,String password) {
         return new GuestUser(userType,account,password);
     }
 }

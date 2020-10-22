@@ -29,7 +29,7 @@ public class SupportUser implements User {
     }
 
     @Override
-    public User getClone() {
+    public User getClone(String account,String password) {
         return new SupportUser(userType,account,password);
     }
 }

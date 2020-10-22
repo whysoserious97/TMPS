@@ -14,7 +14,12 @@ public class SuperDecorator extends UserDecorator {
     }
 
     @Override
-    public User getClone() {
-        return new SuperDecorator(decoratedUser.getClone());
+    public String login(String account, String password) {
+        return decoratedUser.login(account,password);
+    }
+
+    @Override
+    public User getClone(String account,String password) {
+        return new SuperDecorator(decoratedUser.getClone(account,password));
     }
 }

@@ -30,7 +30,7 @@ public class ClientUser implements User {
     }
 
     @Override
-    public User getClone() {
+    public User getClone(String account,String password) {
         return new ClientUser(userType,account,password);
     }
 }

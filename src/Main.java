@@ -1,30 +1,37 @@
+import StructuralDP.ProxyClass;
+import StructuralDP.SuperDecorator;
 import System.Users.User;
 import System.ITSystem;
 public class Main {
     public static void main(String[] args) {
+
+        //For test
+        String testAccount="testacc";
+        String testPassword="testpass";
+        ProxyClass prox1=new ProxyClass();
 
         // First creation of the system
         ITSystem system= ITSystem.getITSystem();
         System.out.println("First system:"+system.hashCode());
 
         //Creating 2 users 1 internal, 1 external and 1 non-valid
-        User user1=system.getNewUser("internal","Admin");
-        User user2=system.getNewUser("external","Client");
+        User user1=system.getNewUser("internal","Admin",testAccount+"1",testPassword);
+        User user2=system.getNewUser("external","Client",testAccount+"2",testPassword);
 
         //Checking prototype Patern
-        User user22 = user2.getClone();
+        User user22 = user2.getClone("CloneAcc","ClonePass");
         System.out.println("User cloned has type: "+user22.getUserType());
-        User user3=system.getNewUser("internal","Client");
+        User user3=system.getNewUser("internal","Client",testAccount+"3",testPassword);
 
         //Trying to loggin for existing ones
-        System.out.println(user1.login());
+        System.out.println(user1.login("user1","pass"));
         System.out.println(user1.getUserType());
-        System.out.println(user2.login());
+        System.out.println(user2.login(testAccount+"2",testPassword));
         System.out.println(user2.getUserType());
 
         // Because 3rd is not valid he should be null and an exception has been risen.
         try {
-            System.out.println(user3.login());
+            System.out.println(user3.login("abc","123"));
             System.out.println(user3.getUserType());
         }catch (Exception e){
             System.out.println("3rd user could not login");
@@ -33,5 +40,16 @@ public class Main {
         // 2nd time we should get the same instance of System.ITSystem
         system= ITSystem.getITSystem();
         System.out.println("Second system:"+system.hashCode());
+
+
+        // Decorator test - we want to create a super user that will be able to do everything
+        User superUser = new SuperDecorator(user1);
+        System.out.println(superUser.getUserType());
+        System.out.println(superUser.login(testAccount+"1",testPassword));
+
+        //Proxy
+        prox1.user=user1;
+        System.out.println("Login with proxy "+prox1.login(testAccount+"1",testPassword));
+        System.out.println("Login with proxy "+prox1.login(testAccount+"1","testPassword"));
     }
 }

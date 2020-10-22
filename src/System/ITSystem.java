@@ -23,8 +23,8 @@ public class ITSystem {
         return system;
     }
 
-    public User getNewUser(String FactoryType, String UserType){
-        return UserFactory.getUserFactory(FactoryType).getUser(UserType);
+    public User getNewUser(String FactoryType, String UserType,String account,String password){
+        return UserFactory.getUserFactory(FactoryType).getUser(UserType,account,password);
 
     }
 

@@ -4,7 +4,7 @@ import System.Users.User;
 
 public abstract class UserFactory {
 
-    public abstract User getUser(String userType);
+    public abstract User getUser(String userType, String account, String password);
 
 
     public static UserFactory getUserFactory(String factoryType){

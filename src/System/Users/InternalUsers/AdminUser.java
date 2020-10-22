@@ -32,7 +32,7 @@ public class AdminUser implements User {
         this.password=password;
     }
     @Override
-    public User getClone() {
+    public User getClone(String account,String password) {
         return new AdminUser(userType,account,password);
     }
 }
