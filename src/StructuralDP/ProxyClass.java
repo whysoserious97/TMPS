@@ -1,6 +1,6 @@
 package StructuralDP;
 
-import System.Users.User;
+import BankSystem.Users.User;
 
 public class ProxyClass implements ILogin{
     public User user;

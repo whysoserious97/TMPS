@@ -1,7 +1,9 @@
+import StructuralDP.Document;
+import StructuralDP.DocumentFactory;
 import StructuralDP.ProxyClass;
 import StructuralDP.SuperDecorator;
-import System.Users.User;
-import System.ITSystem;
+import BankSystem.Users.User;
+import BankSystem.ITSystem;
 public class Main {
     public static void main(String[] args) {
 
@@ -21,7 +23,8 @@ public class Main {
         //Checking prototype Patern
         User user22 = user2.getClone("CloneAcc","ClonePass");
         System.out.println("User cloned has type: "+user22.getUserType());
-        User user3=system.getNewUser("internal","Client",testAccount+"3",testPassword);
+        User user3 = system.getNewUser("internal","Client",testAccount+"3",testPassword);
+        User user4 = system.getNewUser("internal","support",testAccount+"123",testPassword);
 
         //Trying to loggin for existing ones
         System.out.println(user1.login("user1","pass"));
@@ -51,5 +54,15 @@ public class Main {
         prox1.user=user1;
         System.out.println("Login with proxy "+prox1.login(testAccount+"1",testPassword));
         System.out.println("Login with proxy "+prox1.login(testAccount+"1","testPassword"));
+
+        user4.saveDoc("Raport 1","Acest raport este creat cu scopul...","raport-icon","encoding1",".doc","Rap document");
+        user2.saveDoc("Raport 2","Acest raport este extensia raportului 1...","raportx-icon","encoding2",".docx","Rap documentX");
+        user22.saveDoc("Raport 3","Acest raport este redactarea doc1 ...","raport-icon","encoding1",".doc","Rap document");
+
+        ITSystem.getITSystem().printAllDocs();
+        System.out.println(DocumentFactory.docTypes.size());
+
     }
+
+
 }

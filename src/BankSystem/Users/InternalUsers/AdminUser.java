@@ -1,12 +1,18 @@
-package System.Users.InternalUsers;
+package BankSystem.Users.InternalUsers;
 
-import System.Users.User;
+import StructuralDP.Permision;
+import BankSystem.Users.User;
+import BankSystem.ITSystem;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdminUser implements User {
 
     String userType;
     String account;
     String password;
+    List<Permision> permisions = new ArrayList<>();
+
     public AdminUser(String factoryType,String account,String password){
         userType=factoryType;
         this.account=account;
@@ -34,5 +40,10 @@ public class AdminUser implements User {
     @Override
     public User getClone(String account,String password) {
         return new AdminUser(userType,account,password);
+    }
+
+    @Override
+    public void saveDoc(String filename,String  content,String icon,String encoding,String extension,String fullname) {
+        ITSystem.getITSystem().saveIntoSystem(filename,content,"superUser:"+this,icon,encoding,extension,fullname);
     }
 }

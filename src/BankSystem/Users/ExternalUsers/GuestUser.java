@@ -1,12 +1,19 @@
-package System.Users.ExternalUsers;
+package BankSystem.Users.ExternalUsers;
 
-import System.Users.User;
+import StructuralDP.Permision;
+import BankSystem.Users.User;
+import BankSystem.ITSystem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GuestUser implements User {
 
     String userType;
     String account;
     String password;
+    List<Permision> permisions = new ArrayList<>();
+
     public GuestUser(String factoryType,String account,String password){
 
         userType=factoryType;
@@ -33,5 +40,11 @@ public class GuestUser implements User {
     @Override
     public User getClone(String account,String password) {
         return new GuestUser(userType,account,password);
+    }
+
+
+    @Override
+    public void saveDoc(String filename,String  content,String icon,String encoding,String extension,String fullname) {
+        ITSystem.getITSystem().saveIntoSystem(filename,content,this.account,icon,encoding,extension,fullname);
     }
 }

@@ -4,14 +4,14 @@
 ## Acomplished Objectives :
 __1. I have studied and understood the Creational Design Patterns;__
 
-__2. The domain chosen is "IT System inside a big company", in the next lab I will implement the logic for a bank system__
+__2. The domain chosen is "IT BankSystem inside a big company", in the next lab I will implement the logic for a bank system__
 
 __3. In this project I have chosen The next CDP: Singleton,Factory Method,Abstract factory and Prototype__
 ## Introduction:
 In software engineering, creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design.
 
 ## Implementation
-> * Singleton - The Company has implemented an IT System and it should be a single instance.
+> * Singleton - The Company has implemented an IT BankSystem and it should be a single instance.
         
      public class ITSystem {
     

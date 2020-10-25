@@ -1,6 +1,8 @@
-package System.Users.ExternalUsers;
+package BankSystem.Users.ExternalUsers;
 
-import System.Users.User;
+import BankSystem.Users.User;
+
+import BankSystem.ITSystem;
 
 public class ClientUser implements User {
 
@@ -32,5 +34,11 @@ public class ClientUser implements User {
     @Override
     public User getClone(String account,String password) {
         return new ClientUser(userType,account,password);
+    }
+
+
+    @Override
+    public void saveDoc(String filename,String  content,String icon,String encoding,String extension,String fullname) {
+        ITSystem.getITSystem().saveIntoSystem(filename,content,this.account,icon,encoding,extension,fullname);
     }
 }

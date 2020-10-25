@@ -1,8 +1,8 @@
-package System;
+package BankSystem;
 
-import System.Users.ExternalUsers.ClientUser;
-import System.Users.ExternalUsers.GuestUser;
-import System.Users.User;
+import BankSystem.Users.ExternalUsers.ClientUser;
+import BankSystem.Users.ExternalUsers.GuestUser;
+import BankSystem.Users.User;
 
 public class ExternalUserFactory extends UserFactory {
 

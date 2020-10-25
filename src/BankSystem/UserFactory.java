@@ -1,6 +1,6 @@
-package System;
+package BankSystem;
 
-import System.Users.User;
+import BankSystem.Users.User;
 
 public abstract class UserFactory {
 

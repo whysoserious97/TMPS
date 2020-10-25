@@ -1,8 +1,8 @@
-package System;
+package BankSystem;
 
-import System.Users.InternalUsers.SupportUser;
-import System.Users.InternalUsers.AdminUser;
-import System.Users.User;
+import BankSystem.Users.InternalUsers.SupportUser;
+import BankSystem.Users.InternalUsers.AdminUser;
+import BankSystem.Users.User;
 
 public class InternalUserFactory extends UserFactory {
 
