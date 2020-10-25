@@ -1,18 +1,16 @@
 package BankSystem.Users.InternalUsers;
 
-import StructuralDP.Permision;
+
 import BankSystem.Users.User;
 import BankSystem.ITSystem;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class SupportUser implements User {
 
     String userType;
     String account;
     String password;
-    List<Permision> permisions = new ArrayList<>();
 
     public SupportUser(String factoryType,String account,String password){
         userType=factoryType;

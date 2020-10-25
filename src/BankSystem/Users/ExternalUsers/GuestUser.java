@@ -1,18 +1,15 @@
 package BankSystem.Users.ExternalUsers;
 
-import StructuralDP.Permision;
+
 import BankSystem.Users.User;
 import BankSystem.ITSystem;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class GuestUser implements User {
 
     String userType;
     String account;
     String password;
-    List<Permision> permisions = new ArrayList<>();
 
     public GuestUser(String factoryType,String account,String password){
 
