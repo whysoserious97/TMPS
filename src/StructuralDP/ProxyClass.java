@@ -12,6 +12,7 @@ public class ProxyClass implements ILogin{
     }
     @Override
     public String login(String account, String password) {
-        return user.login(account,password);
+
+            return user.login(account,password);
     }
 }
