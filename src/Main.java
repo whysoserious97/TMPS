@@ -1,3 +1,4 @@
+import BehaviourDP.FileHandler;
 import StructuralDP.Document;
 import StructuralDP.DocumentFactory;
 import StructuralDP.ProxyClass;
@@ -59,8 +60,28 @@ public class Main {
         user2.saveDoc("Raport 2","Acest raport este extensia raportului 1...","raportx-icon","encoding2",".docx","Rap documentX");
         user22.saveDoc("Raport 3","Acest raport este redactarea doc1 ...","raport-icon","encoding1",".doc","Rap document");
 
+
         ITSystem.getITSystem().printAllDocs();
         System.out.println(DocumentFactory.docTypes.size());
+
+        //Behavour
+
+        // Memento
+
+        FileHandler fh = new FileHandler();
+
+        System.out.println();
+        String content = "Orange SA:Cerere de transfer, Gaz Natural Fenosa , 10000";
+        fh.saveCopy(content);
+        System.out.println("Checkpoit 1: " + content);
+        content = "Status Cerere: Acceptat";
+        fh.saveCopy(content);
+        System.out.println("Checkpoit 2: " + content);
+
+        content = fh.cancel("Insuficient Cash");
+
+        System.out.println("Checkpoit 3: " + content);
+        System.out.println();
 
     }
 
