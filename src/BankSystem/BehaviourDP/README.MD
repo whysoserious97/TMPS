@@ -32,7 +32,7 @@ Behavioural design patterns are concerned with algorithms and the assignment of 
  
 
 
-> * Command - I have used command to decouple the action from implementation.
+> * Template Method - I have used Template Method to define the skeleton of operation and set the different steps in subclasses.
         
         List<User> users = new LinkedList<>();
         users.add(user1);

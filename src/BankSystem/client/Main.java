@@ -89,7 +89,7 @@ public class Main {
         System.out.println("Checkpoit 3: " + content);
         System.out.println();
 
-        //Command DP  in each class I have added a common command 'work', now users are decoupled from implementation. And they do their job based on defined action
+        //Template Method  in each class I have added a common action 'work', now users are decoupled from implementation. And they do their job based on defined action
 
         List<User> users = new LinkedList<>();
         users.add(user1);
