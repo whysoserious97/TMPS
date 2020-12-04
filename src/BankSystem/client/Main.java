@@ -6,6 +6,10 @@ import BankSystem.StructuralDP.proxy.ProxyClass;
 import BankSystem.StructuralDP.decorator.SuperDecorator;
 import BankSystem.Creational.Users.abstraction.User;
 import BankSystem.Creational.system.ITSystem;
+
+import java.util.LinkedList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -87,9 +91,14 @@ public class Main {
 
         //Command DP  in each class I have added a common command 'work', now users are decoupled from implementation. And they do their job based on defined action
 
-        user1.work();
-        user2.work();
-        user4.work();
+        List<User> users = new LinkedList<>();
+        users.add(user1);
+        users.add(user2);
+        users.add(user4);
+
+        for (User user:users) {
+            user.work();
+        }
 
     }
 
